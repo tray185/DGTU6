@@ -41,8 +41,7 @@
 
 .page__body {
   margin: 0;
-  min-width: 320px;
-  overflow-x: hidden;
+  overflow-wrap: break-word;
   background: var(--bg-page);
   color: var(--text);
   font-family: var(--font);
@@ -221,12 +220,12 @@
 }
 
 .hero__content {
-  flex: 1 1 420px;
+  flex: 1 1 min(420px, 100%);
   min-width: 0;
 }
 
 .hero__visual {
-  flex: 1 1 300px;
+  flex: 1 1 min(300px, 100%);
   display: flex;
   justify-content: center;
   min-width: 0;
@@ -245,7 +244,7 @@
 
 .hero__title {
   margin: 0 0 16px;
-  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-size: clamp(1.75rem, 7vw, 3.25rem);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -431,7 +430,7 @@
    Блок card
    ========================================================= */
 .card {
-  flex: 1 1 280px;
+  flex: 1 1 min(280px, 100%);
   min-width: 0;
   padding: 28px;
   border-radius: var(--radius);
@@ -483,7 +482,7 @@
    Блок step
    ========================================================= */
 .step {
-  flex: 1 1 220px;
+  flex: 1 1 min(220px, 100%);
   min-width: 0;
   padding: 24px;
   border-radius: var(--radius);
@@ -532,7 +531,7 @@
    ========================================================= */
 .plan {
   position: relative;
-  flex: 1 1 280px;
+  flex: 1 1 min(280px, 100%);
   display: flex;
   flex-direction: column;
   min-width: 0;
@@ -672,6 +671,18 @@
    Адаптив
    ========================================================= */
 @media (max-width: 640px) {
+  .hero__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+  }
+
+  .hero__content,
+  .hero__visual {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
   .header__inner {
     justify-content: center;
   }
