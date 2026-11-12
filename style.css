@@ -1,0 +1,727 @@
+/* =========================================================
+   Переменные
+   ========================================================= */
+:root {
+  --primary: #229ed9;
+  --primary-dark: #1a85b8;
+  --primary-soft: #e6f4fb;
+  --bg-page: #f6f8fb;
+  --bg-surface: #ffffff;
+  --bg-alt: #eef3f8;
+  --text: #17212b;
+  --text-muted: #5f6b7a;
+  --line: #dde4ec;
+  --radius: 16px;
+  --radius-small: 10px;
+  --radius-pill: 999px;
+  --shadow: 0 1px 2px rgba(23, 33, 43, 0.05), 0 10px 30px rgba(23, 33, 43, 0.08);
+  --shadow-hover: 0 2px 4px rgba(23, 33, 43, 0.06), 0 18px 40px rgba(23, 33, 43, 0.12);
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --container: 1120px;
+  --gap: 24px;
+  --section-space: clamp(56px, 9vw, 96px);
+  --transition: 0.2s ease;
+}
+
+/* Единый сброс box-sizing — единственный глобальный селектор */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   Блок page
+   ========================================================= */
+.page {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+}
+
+.page__body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--bg-page);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Блок container (миксуется с __inner других блоков)
+   ========================================================= */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+/* =========================================================
+   Блок button
+   ========================================================= */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 24px;
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+    border-color var(--transition), transform var(--transition);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(34, 158, 217, 0.45);
+  outline-offset: 3px;
+}
+
+.button_variant_primary {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.button_variant_primary:hover {
+  background: var(--primary-dark);
+}
+
+.button_variant_ghost {
+  background: transparent;
+  border-color: var(--line);
+  color: var(--text);
+}
+
+.button_variant_ghost:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.button_variant_light {
+  background: #ffffff;
+  color: var(--primary-dark);
+}
+
+.button_variant_light:hover {
+  background: var(--primary-soft);
+}
+
+.button_size_small {
+  min-height: 40px;
+  padding: 8px 18px;
+  font-size: 0.92rem;
+}
+
+/* =========================================================
+   Блок header
+   ========================================================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: saturate(180%) blur(12px);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-block: 12px;
+}
+
+/* =========================================================
+   Блок logo
+   ========================================================= */
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.logo__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.logo__text {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   Блок nav
+   ========================================================= */
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__link {
+  display: inline-block;
+  padding: 6px 2px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav__link:hover {
+  color: var(--primary);
+}
+
+/* =========================================================
+   Блок hero
+   ========================================================= */
+.hero {
+  padding-block: clamp(40px, 8vw, 88px);
+  background:
+    radial-gradient(ellipse at 85% 0%, rgba(34, 158, 217, 0.14), transparent 60%),
+    var(--bg-page);
+}
+
+.hero__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 48px var(--gap);
+}
+
+.hero__content {
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.hero__visual {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--primary-soft);
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.hero__title {
+  margin: 0 0 16px;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero__accent {
+  color: var(--primary);
+}
+
+.hero__text {
+  margin: 0 0 28px;
+  max-width: 34em;
+  color: var(--text-muted);
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.hero__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero__fact {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__fact-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.hero__fact-label {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+/* =========================================================
+   Блок chat (макет переписки с ботом)
+   ========================================================= */
+.chat {
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  border-radius: calc(var(--radius) + 8px);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow);
+}
+
+.chat__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background: var(--primary);
+  color: #ffffff;
+}
+
+.chat__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  font-size: 1.2rem;
+}
+
+.chat__meta {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.chat__name {
+  font-weight: 600;
+}
+
+.chat__status {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.chat__body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  background: #e7eef4;
+}
+
+.chat__message {
+  max-width: 85%;
+  margin: 0;
+  padding: 10px 14px;
+  border-radius: var(--radius-small);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  box-shadow: 0 1px 1px rgba(23, 33, 43, 0.08);
+}
+
+.chat__message_from_bot {
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+  background: var(--bg-surface);
+}
+
+.chat__message_from_user {
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+  background: #d9f2c4;
+}
+
+.chat__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chat__button {
+  flex: 1 1 40%;
+  padding: 8px 10px;
+  border-radius: var(--radius-small);
+  background: rgba(34, 158, 217, 0.14);
+  color: var(--primary-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =========================================================
+   Блок section
+   ========================================================= */
+.section {
+  padding-block: var(--section-space);
+}
+
+.section_tone_alt {
+  background: var(--bg-alt);
+}
+
+.section__header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.section__title {
+  margin: 0 0 10px;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.section__subtitle {
+  margin: 0 auto;
+  max-width: 36em;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   Блок cards
+   ========================================================= */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* =========================================================
+   Блок card
+   ========================================================= */
+.card {
+  flex: 1 1 280px;
+  min-width: 0;
+  padding: 28px;
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-small);
+  background: var(--primary-soft);
+  font-size: 1.5rem;
+}
+
+.card__title {
+  margin: 0 0 8px;
+  font-size: 1.15rem;
+}
+
+.card__text {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   Блок steps
+   ========================================================= */
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* =========================================================
+   Блок step
+   ========================================================= */
+.step {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+}
+
+.step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 14px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.step__title {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+
+.step__text {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   Блок plans
+   ========================================================= */
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: var(--gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* =========================================================
+   Блок plan
+   ========================================================= */
+.plan {
+  position: relative;
+  flex: 1 1 280px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 32px 28px;
+  border: 2px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-surface);
+}
+
+.plan_featured {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-hover);
+}
+
+.plan__badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.plan__name {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.plan__price {
+  margin: 0 0 20px;
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.plan__list {
+  flex-grow: 1;
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.plan__item {
+  position: relative;
+  padding: 6px 0 6px 28px;
+  color: var(--text-muted);
+}
+
+.plan__item::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.plan__button {
+  width: 100%;
+}
+
+/* =========================================================
+   Блок cta
+   ========================================================= */
+.cta {
+  padding-block: var(--section-space);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #ffffff;
+}
+
+.cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cta__title {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 4.5vw, 2.4rem);
+  line-height: 1.2;
+}
+
+.cta__text {
+  margin: 0 0 28px;
+  max-width: 32em;
+  opacity: 0.92;
+}
+
+/* =========================================================
+   Блок footer
+   ========================================================= */
+.footer {
+  padding-block: 28px;
+  background: var(--text);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.footer__copy {
+  margin: 0;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer__link:hover {
+  color: var(--primary);
+}
+
+/* =========================================================
+   Адаптив
+   ========================================================= */
+@media (max-width: 640px) {
+  .header__inner {
+    justify-content: center;
+  }
+
+  .nav__list {
+    justify-content: center;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .hero__facts {
+    gap: 16px 24px;
+  }
+
+  .card,
+  .plan {
+    padding: 24px 20px;
+  }
+
+  .footer__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding-inline: 16px;
+  }
+
+  .logo__text {
+    font-size: 1.05rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    scroll-behavior: auto;
+  }
+
+  .button,
+  .card,
+  .nav__link,
+  .footer__link {
+    transition: none;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+}
