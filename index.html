@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Разработка Telegram-ботов на заказ: приём заявок, оплаты, рассылки, интеграции с CRM. Под ключ, с поддержкой после запуска.">
+  <title>Telegram-боты на заказ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page__body">
+
+  <header class="header">
+    <div class="header__inner container">
+      <a class="logo" href="#top" aria-label="На главную">
+        <span class="logo__mark" aria-hidden="true">✈</span>
+        <span class="logo__text">BotCraft</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#services">Услуги</a></li>
+          <li class="nav__item"><a class="nav__link" href="#process">Как работаю</a></li>
+          <li class="nav__item"><a class="nav__link" href="#pricing">Цены</a></li>
+        </ul>
+      </nav>
+
+      <a class="button button_size_small button_variant_primary" href="#contact">Обсудить проект</a>
+    </div>
+  </header>
+
+  <main class="main" id="top">
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__inner container">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Разработка под ключ</p>
+          <h1 class="hero__title" id="hero-title">
+            Пишу <span class="hero__accent">Telegram-боты</span> на заказ
+          </h1>
+          <p class="hero__text">
+            Боты, которые принимают заявки и оплаты, отвечают клиентам 24/7
+            и снимают рутину с вашей команды. От идеи до запуска на сервере.
+          </p>
+          <div class="hero__actions">
+            <a class="button button_variant_primary" href="#contact">Написать в Telegram</a>
+            <a class="button button_variant_ghost" href="#pricing">Посмотреть цены</a>
+          </div>
+          <ul class="hero__facts">
+            <li class="hero__fact">
+              <strong class="hero__fact-value">от 5 дней</strong>
+              <span class="hero__fact-label">срок запуска</span>
+            </li>
+            <li class="hero__fact">
+              <strong class="hero__fact-value">24/7</strong>
+              <span class="hero__fact-label">бот работает без выходных</span>
+            </li>
+            <li class="hero__fact">
+              <strong class="hero__fact-value">1 месяц</strong>
+              <span class="hero__fact-label">поддержки в подарок</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="chat">
+            <div class="chat__header">
+              <span class="chat__avatar">🤖</span>
+              <span class="chat__meta">
+                <span class="chat__name">Shop Bot</span>
+                <span class="chat__status">бот · онлайн</span>
+              </span>
+            </div>
+            <div class="chat__body">
+              <p class="chat__message chat__message_from_user">Хочу заказать доставку</p>
+              <p class="chat__message chat__message_from_bot">
+                Отлично! Выберите категорию — оформлю заказ за минуту 👇
+              </p>
+              <div class="chat__buttons">
+                <span class="chat__button">🍕 Пицца</span>
+                <span class="chat__button">🍣 Роллы</span>
+                <span class="chat__button">🥗 Салаты</span>
+                <span class="chat__button">🛒 Корзина</span>
+              </div>
+              <p class="chat__message chat__message_from_bot">
+                Заказ №1024 оплачен ✅ Курьер будет через 40 минут.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="section__inner container">
+        <header class="section__header">
+          <h2 class="section__title" id="services-title">Что умеют мои боты</h2>
+          <p class="section__subtitle">Решаю конкретные задачи бизнеса, а не просто пишу код</p>
+        </header>
+
+        <ul class="cards">
+          <li class="card">
+            <span class="card__icon" aria-hidden="true">📝</span>
+            <h3 class="card__title">Приём заявок</h3>
+            <p class="card__text">Анкеты, запись на услуги, сбор контактов — сразу в таблицу или CRM.</p>
+          </li>
+          <li class="card">
+            <span class="card__icon" aria-hidden="true">💳</span>
+            <h3 class="card__title">Онлайн-оплата</h3>
+            <p class="card__text">Платежи внутри Telegram, выставление счетов и подписки.</p>
+          </li>
+          <li class="card">
+            <span class="card__icon" aria-hidden="true">🛍</span>
+            <h3 class="card__title">Магазин в боте</h3>
+            <p class="card__text">Каталог, корзина и оформление заказа без отдельного сайта.</p>
+          </li>
+          <li class="card">
+            <span class="card__icon" aria-hidden="true">📣</span>
+            <h3 class="card__title">Рассылки</h3>
+            <p class="card__text">Сегментированные рассылки по базе подписчиков со статистикой.</p>
+          </li>
+          <li class="card">
+            <span class="card__icon" aria-hidden="true">🔗</span>
+            <h3 class="card__title">Интеграции</h3>
+            <p class="card__text">amoCRM, Битрикс24, Google Таблицы, 1С и любые API.</p>
+          </li>
+          <li class="card">
+            <span class="card__icon" aria-hidden="true">🛡</span>
+            <h3 class="card__title">Модерация чатов</h3>
+            <p class="card__text">Антиспам, приветствие новичков и автоматические правила группы.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section_tone_alt" id="process" aria-labelledby="process-title">
+      <div class="section__inner container">
+        <header class="section__header">
+          <h2 class="section__title" id="process-title">Как я работаю</h2>
+          <p class="section__subtitle">Прозрачно и по шагам — вы всегда знаете, что происходит</p>
+        </header>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step__number" aria-hidden="true">1</span>
+            <h3 class="step__title">Бриф</h3>
+            <p class="step__text">Обсуждаем задачу и сценарии, фиксирую требования в ТЗ.</p>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">2</span>
+            <h3 class="step__title">Прототип</h3>
+            <p class="step__text">Показываю логику диалогов и кнопок до начала разработки.</p>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">3</span>
+            <h3 class="step__title">Разработка</h3>
+            <p class="step__text">Пишу код, подключаю оплату и интеграции, тестирую.</p>
+          </li>
+          <li class="step">
+            <span class="step__number" aria-hidden="true">4</span>
+            <h3 class="step__title">Запуск</h3>
+            <p class="step__text">Разворачиваю на сервере, передаю доступы и инструкцию.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="section__inner container">
+        <header class="section__header">
+          <h2 class="section__title" id="pricing-title">Стоимость</h2>
+          <p class="section__subtitle">Итоговая цена зависит от сценариев — назову её после брифа</p>
+        </header>
+
+        <ul class="plans">
+          <li class="plan">
+            <h3 class="plan__name">Старт</h3>
+            <p class="plan__price">от 5 000 ₽</p>
+            <ul class="plan__list">
+              <li class="plan__item">Меню и ответы на частые вопросы</li>
+              <li class="plan__item">Сбор заявок с уведомлением</li>
+              <li class="plan__item">Срок — от 5 дней</li>
+            </ul>
+            <a class="button button_variant_ghost plan__button" href="#contact">Выбрать</a>
+          </li>
+          <li class="plan plan_featured">
+            <span class="plan__badge">Популярный</span>
+            <h3 class="plan__name">Бизнес</h3>
+            <p class="plan__price">от 15 000 ₽</p>
+            <ul class="plan__list">
+              <li class="plan__item">Всё из тарифа «Старт»</li>
+              <li class="plan__item">Онлайн-оплата и база данных</li>
+              <li class="plan__item">Админ-панель и рассылки</li>
+              <li class="plan__item">Срок — от 10 дней</li>
+            </ul>
+            <a class="button button_variant_primary plan__button" href="#contact">Выбрать</a>
+          </li>
+          <li class="plan">
+            <h3 class="plan__name">Под ключ</h3>
+            <p class="plan__price">от 35 000 ₽</p>
+            <ul class="plan__list">
+              <li class="plan__item">Сложная логика и интеграции</li>
+              <li class="plan__item">Магазин, CRM, внешние API</li>
+              <li class="plan__item">Приоритетная поддержка</li>
+            </ul>
+            <a class="button button_variant_ghost plan__button" href="#contact">Выбрать</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta" id="contact" aria-labelledby="cta-title">
+      <div class="cta__inner container">
+        <h2 class="cta__title" id="cta-title">Есть идея для бота?</h2>
+        <p class="cta__text">
+          Напишите мне в Telegram — отвечу в течение дня, оценю сроки и стоимость бесплатно.
+        </p>
+        <a class="button button_variant_light" href="https://t.me/your_username" target="_blank" rel="noopener">
+          Написать @your_username
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <p class="footer__copy">© 2026 BotCraft. Разработка Telegram-ботов.</p>
+      <ul class="footer__links">
+        <li class="footer__item"><a class="footer__link" href="https://t.me/your_username" target="_blank" rel="noopener">Telegram</a></li>
+        <li class="footer__item"><a class="footer__link" href="#top">Наверх ↑</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
